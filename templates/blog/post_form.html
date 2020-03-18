@@ -1,0 +1,35 @@
+  
+{% extends "_layout.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<style>
+.center-div
+{
+     position: absolute;
+     margin: auto;
+     top: 0px;
+     right: 0px;
+     bottom: 0px;
+     left: 0px;
+     width: 700px;
+     height: 550px;
+     
+
+}
+</style>
+    <div class="content-section col-md-12 center-div">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Create Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
